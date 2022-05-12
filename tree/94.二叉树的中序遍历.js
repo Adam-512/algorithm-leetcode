@@ -25,13 +25,11 @@ var inorderTraversal = function (root) {
             return
         }
         inOrder(node.left)
-        res.push(node.data)
+        res.push(node.val)
         inOrder(node.right)
     }
     inOrder(root)
     return res
 };
-const res =  inorderTraversal(root)
-console.log(res)
 // @lc code=end
 
