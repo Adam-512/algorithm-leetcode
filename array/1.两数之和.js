@@ -11,14 +11,14 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-  let mp = new Map()
-  for (let i = 0; i < nums.length; i++) {
-    let num = nums[i]
-    if (mp.has(target - num)) {
-      return [i, mp.get(target - num)]
+    let mp = new Map()
+    for (let i = 0; i < nums.length; i++) {
+        let parter = target - nums[i]
+        if (mp.has(parter)) {
+            return [mp.get(parter), i]
+        }
+        mp.set(nums[i], i)
     }
-    mp.set(num, i)
-  }
 };
 // @lc code=end
 

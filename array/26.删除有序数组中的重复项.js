@@ -10,14 +10,14 @@
  * @return {number}
  */
 var removeDuplicates = function (nums) {
-  let i = 0
-  for (let j = 1; j < nums.length; j++) {
-    if (nums[i] != nums[j]) {
-      nums[++i] = nums[j]
+    let n = nums.length;
+    let index = 0;
+    for (let i = 0; i < n; i++) {
+        if (nums[i] != nums[index]) {
+            nums[++index] = nums[i];
+        }
     }
-  }
-  nums = nums.slice(0, i++)
-  return i
+    return index + 1;
 };
 // @lc code=end
 
