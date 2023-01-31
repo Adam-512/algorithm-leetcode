@@ -10,20 +10,18 @@
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-    let n = s.length
-    let mp = new Map()
-    let start = 0
-    let len = 0
-    for (let i = 0; i < n; i++) {
-        let alpha = s[i]
-        if (mp.has(alpha)) {
-            start = Math.max(mp.get(alpha) + 1, start)//重复的元素可能相邻，或者在之前，但start左边界需要往前走
+    let left = 0;
+    let mp = new Map();
+    let len = 0;
+    for (let right = 0; right < s.length; right++) {
+        let str = s[right]
+        if (mp.has(s[right])) {
+            left = Math.max(left, mp.get(str) + 1)
         }
-        //(i,start)
-        len = Math.max(len, i - start + 1)
-        mp.set(alpha, i)
+        len = Math.max(len, right - left + 1)
+        mp.set(str, right)
     }
-    return len
+    return len;
 };
 // @lc code=end
 
