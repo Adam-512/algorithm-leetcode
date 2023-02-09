@@ -9,15 +9,16 @@
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function (nums) {
-    let n = nums.length;
-    let index = 0;
-    for (let i = 0; i < n; i++) {
-        if (nums[i] != nums[index]) {
-            nums[++index] = nums[i];
+
+//同向双指针的 l 一般用于满足条件的左边界
+var removeDuplicates = function(nums) {
+    let l = 0;
+    for(let i=1;i<nums.length;i++){
+        if(nums[l] != nums[i]){
+            nums[++l] = nums[i]
         }
     }
-    return index + 1;
+    return l+1
 };
 // @lc code=end
 
