@@ -9,6 +9,8 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+
+//核心妙点：数组先排序，因为求和的是3个数相加为0，所以_nums[i] > 0 break，再利用while 对象指针移动求和
 var threeSum = function (nums) {
     let res = []
     let _nums = nums.sort((a, b) => a - b);
