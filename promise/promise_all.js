@@ -28,3 +28,19 @@ const all = async function (task) {
     });
 }
 
+async function test() {
+    var p1 = Promise.resolve(1);
+    var p2 = new Promise(resolve => {
+        setTimeout(() => {
+            resolve(3)
+        }, 1000);
+    })
+    var p3 = new Promise(resolve => {
+        setTimeout(() => {
+            resolve(2)
+        }, 500);
+    })
+    race([p1,p2,p3]).then(r=>console.log(`race: ${r}`))
+    Promise.race([p1,p2,p3]).then(r=>console.log(`promise: ${r}`))
+}
+
