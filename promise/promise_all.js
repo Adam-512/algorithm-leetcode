@@ -19,8 +19,9 @@ const all = async function (task) {
                 }).catch(reject);
             }
             else {
+                count++;
                 result[i] = p;
-                if (count == task.length - 1) {
+                if (count == task.length) {
                     resolve(result);
                 }
             }
