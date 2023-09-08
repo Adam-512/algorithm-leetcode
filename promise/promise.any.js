@@ -1,5 +1,5 @@
 /**
- * description
+ * description 返回最快执行的结果，如果全部失败返回错误列表
  * @param {Promise[]} task - description
  */
 const any = (task) => {
